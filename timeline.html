@@ -9,18 +9,18 @@
     <link rel="stylesheet" href="css/style.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="js/main.js"></script>
+    <script src="js/vue.min.js"></script>
   </head>
   <body class="main-page">
 
   <script>header('');</script>
 
   <script>sidebar('');</script>
-
   <div class="column">
     <div class="main">
       <div class="inner">
 
-        <div class="status__box">
+        <div id="trigger-post" class="status__box" @click="execute">
           <img class="image" src="https://placehold.jp/150x150.png" alt="user icon">
           <div class="status__text">気になるニュースは？</div>
           <div class="status__button"><button class="post">投稿する</button></div>
@@ -407,8 +407,87 @@
   </div><!-- column -->
 
 
+  <div id="post-modal">
+    <transition name="modal">
+      <div class="modal" v-show="opened" @click.self="close">
+        <div class="modal__content">
+          <div class="modal__box">
+            <div class="modal__close" @click="close">×</div>
+              <img class="image" src="https://placehold.jp/150x150.png" alt="username">
+              <textarea name="post" id="post-textarea" class="modal__textarea" placeholder="気になるニュースは？"></textarea>
+              <div class="modal__foot">
+                  <a class="photo" href="#"><img src="images/icon/photo.png" alt="添付"></a>
+                  <div class="action__post">
+                      <select name="post_status" id="post_status" class="post__status">
+                          <option value="public">全体公開</option>
+                          <option value="private">限定公開</option>
+                      </select>
+                      <button class="button__post">投稿する</button>
+                  </div>
+              </div>
+          </div>
+        </div>
+      </div>
+    </transition>
+  </div>
 
-    <script src="js/masonry.min.js"></script>
+
+  <script src="js/masonry.min.js"></script>
+  <script>
+      var post = new Vue();
+
+      new Vue({
+          el: '#trigger-post',
+          methods: {
+              execute: function() {
+                  post.$emit('click.trigger');
+              }
+          }
+      });
+
+      new Vue({
+          el: '#post-modal',
+          data: {
+              opened: false
+          },
+          methods: {
+              open: function() {
+                  this.opened = true;
+              },
+              close: function() {
+                  this.opened = false;
+              }
+          },
+          created: function() {
+              post.$on('click.trigger', this.open);
+          }
+      });
+  </script>
+
+  <script>
+      // テキストエリアの高さ自動調整
+      var modalTextarea = document.getElementById("post-textarea");
+      modalTextarea.style.lineHeight = "20px";//init
+      modalTextarea.style.height = "30px";//init
+
+      modalTextarea.addEventListener("input",function(evt){
+          if(evt.target.scrollHeight > evt.target.offsetHeight){
+              evt.target.style.height = evt.target.scrollHeight + "px";
+          }else{
+              var height,lineHeight;
+              while (true){
+                  height = Number(evt.target.style.height.split("px")[0]);
+                  lineHeight = Number(evt.target.style.lineHeight.split("px")[0]);
+                  evt.target.style.height = height - lineHeight + "px";
+                  if(evt.target.scrollHeight > evt.target.offsetHeight){
+                      evt.target.style.height = evt.target.scrollHeight + "px";
+                      break;
+                  }
+              }
+          }
+      });
+
+  </script>
     <script>
       function mansoryColumn() {
           var elem = document.querySelector('.feed__block');
