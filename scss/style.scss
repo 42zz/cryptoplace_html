@@ -2434,6 +2434,11 @@ a {
     }
 
 
+    input[type="submit"] {
+        -webkit-appearance: none;
+        border-radius: 0;
+    }
+
     //header
     .top-bar {
         display: block;
@@ -2745,6 +2750,25 @@ a {
                 .action__button {
                     width: 48%;
                 }
+            }
+        }
+    }
+    .footer {
+        height: auto;
+        padding-bottom: 40px;
+        .inner {
+            width: 100%;
+        }
+        .footer_menu {
+            display: flex;
+            display: -webkit-flex;
+            flex-wrap: wrap;
+
+            & > li {
+                margin: 10px 0;
+                margin-left: 20px;
+                text-align: left;
+                width: 40%;
             }
         }
     }
