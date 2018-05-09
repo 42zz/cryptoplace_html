@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="css/style.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="js/main.js"></script>
+    <script src="js/vue.min.js"></script>
   </head>
   <body class="profile">
 
@@ -43,7 +44,7 @@
           <div class="box">
             <div class="head">
               <h2 class="title">プロフィール</h2>
-              <a href="#" class="edit">編集する</a>
+              <a id="trigger-editProfile" @click="execute" class="edit">編集する</a>
             </div>
             <dl class="user_profile">
               <dt>年齢：</dt><dd>20代後半</dd>
@@ -127,7 +128,7 @@
 
         </div><!-- profile__side -->
         <div class="profile__main">
-          <div class="status__box pc">
+          <div id="trigger-post" @click="execute" class="status__box pc">
             <img class="image" src="https://pbs.twimg.com/profile_images/943227488292962306/teiNNAiy.jpg" alt="user icon">
             <div class="status__text">気になるニュースは？</div>
             <div class="status__button"><button class="post">投稿する</button></div>
@@ -226,5 +227,165 @@
         </div><!-- profile__main -->
       </div>
     </div><!-- profile__wrapper -->
+  <div id="post-modal">
+    <transition name="modal">
+      <div class="modal" v-show="opened" @click.self="close">
+        <div class="modal__content">
+          <div class="modal__box">
+            <div class="modal__close" @click="close">×</div>
+            <img class="image" src="https://placehold.jp/150x150.png" alt="username">
+            <textarea name="post" id="post-textarea" class="modal__textarea" placeholder="気になるニュースは？"></textarea>
+            <div class="modal__foot">
+              <a class="photo" href="#"><img src="images/icon/photo.png" alt="添付"></a>
+              <div class="action__post">
+                <select name="post_status" id="post_status" class="post__status">
+                  <option value="public">全体公開</option>
+                  <option value="private">限定公開</option>
+                </select>
+                <button class="button submit">投稿する</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </transition>
+  </div>
+
+
+  <div id="editProfile-modal">
+    <transition name="modal">
+      <div class="modal" v-show="opened" @click.self="close">
+        <div class="modal__content">
+          <div class="modal__box modal__profile">
+            <div class="modal__close" @click="close">×</div>
+            <h2 class="title">プロフィールを編集する</h2>
+            <div class="profile__body">
+              <div id="editProfileImage" class="edit-image">
+                <div class="image-mask"></div>
+                <img src="https://pbs.twimg.com/profile_images/943227488292962306/teiNNAiy.jpg" alt="user" class="image">
+                <span class="edit-image-message">画像を変更する</span>
+              </div>
+
+              <div class="form-group">
+                <label class="form-label"><span class="item-name">名前</span>
+                  <input class="form-input" type="text" placeholder="名前">
+                </label>
+                <div class="form-split">
+                  <label class="form-label"><span class="item-name">年齢</span>
+                    <select name="" class="form-input">
+                      <option value="test1">20代前半</option>
+                      <option value="test2">20代後半</option>
+                    </select>
+                  </label>
+                  <label class="form-label"><span class="item-name">仮想通貨歴</span>
+                    <select name="" class="form-input">
+                      <option value="test1">１年</option>
+                      <option value="test2">２年</option>
+                    </select>
+                  </label>
+                </div>
+                <label class="form-label"><span class="item-name">持っている銘柄</span>
+                  <input class="form-input" type="text" placeholder="銘柄">
+                </label>
+                <label class="form-label"><span class="item-name">注目銘柄</span>
+                  <input class="form-input" type="text" placeholder="今、注目している銘柄">
+                </label>
+                <label class="form-label"><span class="item-name">自己紹介</span>
+                  <textarea name="" id="" class="form-input" cols="30" rows="10"></textarea>
+                </label>
+              </div><!-- form-group -->
+            </div>
+            <div class="modal__foot">
+              <div class="action__post">
+                <button class="button cancel">キャンセル</button>
+                <button class="button submit">変更を保存する</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </transition>
+  </div>
+
+
+  <script>
+      var post = new Vue();
+      new Vue({
+          el: '#trigger-post',
+          methods: {
+              execute: function() {
+                  post.$emit('click.trigger');
+              }
+          }
+      });
+      new Vue({
+          el: '#post-modal',
+          data: {
+              opened: false
+          },
+          methods: {
+              open: function() {
+                  this.opened = true;
+              },
+              close: function() {
+                  this.opened = false;
+              }
+          },
+          created: function() {
+              post.$on('click.trigger', this.open);
+          }
+      });
+
+      var editProfile = new Vue();
+      new Vue({
+          el: '#trigger-editProfile',
+          methods: {
+              execute: function() {
+                  editProfile.$emit('click.trigger');
+              }
+          }
+      });
+      new Vue({
+          el: '#editProfile-modal',
+          data: {
+              opened: false
+          },
+          methods: {
+              open: function() {
+                  this.opened = true;
+              },
+              close: function() {
+                  this.opened = false;
+              }
+          },
+          created: function() {
+              editProfile.$on('click.trigger', this.open);
+          }
+      });
+  </script>
+  <script>
+      // テキストエリアの高さ自動調整
+      var modalTextarea = document.getElementById("post-textarea");
+      modalTextarea.style.lineHeight = "20px";//init
+      modalTextarea.style.height = "30px";//init
+
+      modalTextarea.addEventListener("input",function(evt){
+          if(evt.target.scrollHeight > evt.target.offsetHeight){
+              evt.target.style.height = evt.target.scrollHeight + "px";
+          }else{
+              var height,lineHeight;
+              while (true){
+                  height = Number(evt.target.style.height.split("px")[0]);
+                  lineHeight = Number(evt.target.style.lineHeight.split("px")[0]);
+                  evt.target.style.height = height - lineHeight + "px";
+                  if(evt.target.scrollHeight > evt.target.offsetHeight){
+                      evt.target.style.height = evt.target.scrollHeight + "px";
+                      break;
+                  }
+              }
+          }
+      });
+
+  </script>
   </body>
 </html>

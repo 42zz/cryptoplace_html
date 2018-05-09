@@ -85,39 +85,94 @@ html, body, .trigger {
   -webkit-box-shadow: 0 2px 6px 0px rgba(0, 0, 0, 0.3);
   -moz-box-shadow: 0 2px 6px 0px rgba(0, 0, 0, 0.3);
   box-shadow: 0 2px 6px 0px rgba(0, 0, 0, 0.3); }
-  .modal__box.modal__topic {
+  .modal__box.modal__topic, .modal__box.modal__profile {
     width: 700px; }
-    .modal__box.modal__topic .title {
+    .modal__box.modal__topic .title, .modal__box.modal__profile .title {
       padding: 25px 20px;
       font-size: 20px;
       letter-spacing: 1.4px;
       color: #333;
       border-bottom: 1px solid #e0e0e0; }
-    .modal__box.modal__topic .form-label {
+    .modal__box.modal__topic .form-label, .modal__box.modal__profile .form-label {
       display: flex;
       width: 660px;
       margin: auto;
       padding: 20px 0;
       border-bottom: 1px solid #e0e0e0; }
-      .modal__box.modal__topic .form-label:last-of-type {
+      .modal__box.modal__topic .form-label:last-of-type, .modal__box.modal__profile .form-label:last-of-type {
         border-bottom: none; }
-      .modal__box.modal__topic .form-label .item-name {
+      .modal__box.modal__topic .form-label .item-name, .modal__box.modal__profile .form-label .item-name {
         display: inline-block;
         width: 150px; }
-      .modal__box.modal__topic .form-label .required::after {
+      .modal__box.modal__topic .form-label .required::after, .modal__box.modal__profile .form-label .required::after {
         content: '*';
         color: #ff2828;
         font-size: 22px; }
-      .modal__box.modal__topic .form-label .form-input {
+      .modal__box.modal__topic .form-label .form-input, .modal__box.modal__profile .form-label .form-input {
         width: 100%; }
-      .modal__box.modal__topic .form-label textarea {
+      .modal__box.modal__topic .form-label textarea, .modal__box.modal__profile .form-label textarea {
         resize: none; }
-      .modal__box.modal__topic .form-label .photo {
+      .modal__box.modal__topic .form-label .photo, .modal__box.modal__profile .form-label .photo {
         display: block; }
-      .modal__box.modal__topic .form-label .comment {
+      .modal__box.modal__topic .form-label .comment, .modal__box.modal__profile .form-label .comment {
         margin-top: 10px;
         font-size: 13px;
         color: #808080; }
+  .modal__box.modal__profile .profile__body {
+    display: flex; }
+    .modal__box.modal__profile .profile__body .form-group {
+      width: 100%; }
+    .modal__box.modal__profile .profile__body .form-label {
+      width: 480px; }
+      .modal__box.modal__profile .profile__body .form-label .item-name {
+        color: #808080;
+        font-size: 12px; }
+    .modal__box.modal__profile .profile__body .form-split {
+      display: flex;
+      border-bottom: 1px solid #e0e0e0;
+      width: 480px;
+      margin-left: auto;
+      margin-right: 28px; }
+      .modal__box.modal__profile .profile__body .form-split .form-label {
+        width: 100%;
+        border-bottom: none; }
+        .modal__box.modal__profile .profile__body .form-split .form-label .item-name {
+          width: 110px; }
+        .modal__box.modal__profile .profile__body .form-split .form-label .form-input {
+          width: 110px; }
+    .modal__box.modal__profile .profile__body .edit-image {
+      position: relative;
+      width: 146px;
+      height: 146px;
+      margin-top: 20px;
+      margin-left: 20px;
+      cursor: pointer; }
+      .modal__box.modal__profile .profile__body .edit-image .edit-image-message {
+        position: absolute;
+        top: 65px;
+        left: 20px;
+        color: #fff;
+        font-size: 15px;
+        z-index: 55; }
+      .modal__box.modal__profile .profile__body .edit-image .image-mask {
+        position: absolute;
+        width: 146px;
+        height: 146px;
+        -webkit-border-radius: 80px;
+        -moz-border-radius: 80px;
+        border-radius: 80px;
+        z-index: 50;
+        background-color: rgba(0, 0, 0, 0.5); }
+      .modal__box.modal__profile .profile__body .edit-image .image {
+        position: relative;
+        top: 0;
+        left: 0;
+        width: 146px;
+        height: 146px;
+        -webkit-border-radius: 80px;
+        -moz-border-radius: 80px;
+        border-radius: 80px;
+        background-color: rgba(0, 0, 0, 0.5); }
   .modal__box .modal__foot {
     position: relative;
     width: 100%;
@@ -153,17 +208,23 @@ html, body, .trigger {
           background: #333;
           width: 10px;
           height: 10px; }
-      .modal__box .modal__foot .action__post .button__post {
+      .modal__box .modal__foot .action__post .button {
         width: 110px;
         height: 38px;
         -webkit-border-radius: 4px;
         -moz-border-radius: 4px;
         border-radius: 4px;
-        background-color: #286bb3;
-        color: #fff;
         font-size: 14px;
         font-weight: normal;
         cursor: pointer; }
+        .modal__box .modal__foot .action__post .button.submit {
+          background-color: #286bb3;
+          color: #fff; }
+        .modal__box .modal__foot .action__post .button.cancel {
+          background-color: #fff;
+          color: #808080;
+          border: 1px solid #808080;
+          margin-right: 10px; }
 
 .top-page {
   background: #fff; }
@@ -1720,6 +1781,7 @@ a {
           font-weight: 600;
           color: #333; }
         .profile__wrapper .profile__side .box .head .edit {
+          cursor: pointer;
           margin-left: auto;
           font-size: 12px;
           color: #4a90e2; }
