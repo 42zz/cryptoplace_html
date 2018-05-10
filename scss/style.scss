@@ -203,6 +203,7 @@ a {
 
         .login {
             position: relative;
+            cursor: pointer;
             .image {
                 width: 28px;
                 height: 28px;
@@ -285,6 +286,7 @@ a {
         margin: 20px 0;
 
         .button {
+            cursor: pointer;
             width: 162px;
             height: 34px;
             -webkit-border-radius: 4px;

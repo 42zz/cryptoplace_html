@@ -32,7 +32,7 @@
 
       <div class="navigation">
 
-        <a href="#" class="login">
+        <a id="trigger-head-login" @click="execute" class="login">
           <img class="image" src="images/icon/header/icon-guest.png" alt="username">
           <span class="text">ログインする</span>
         </a>
@@ -54,7 +54,7 @@
       </div>
 
       <div class="nologin__buttons">
-        <button class="button login">ログインする</button>
+        <button id="trigger-login" @click="execute" class="button login">ログインする</button>
         <button class="button register">会員登録する</button>
       </div>
 
@@ -463,37 +463,24 @@
   </div><!-- column -->
 
 
-  <div id="post-modal">
+  <div id="login-modal">
     <transition name="modal">
       <div class="modal" v-show="opened" @click.self="close">
         <div class="modal__content">
-          <div class="modal__box modal__topic">
+          <div class="modal__box modal__login">
             <div class="modal__close" @click="close">×</div>
-            <h2 class="title">トピックをつくって、共通の話題で盛り上がろう！</h2>
+            <h2 class="title">ログインする</h2>
             <div class="form-group">
-              <label class="form-label"><span class="item-name required">タイトル</span>
-                <input class="form-input" type="text" placeholder="100文字以内で入力して下さい">
+              <label class="form-label">
+                <span class="item-name">メールアドレス</span>
+                <input type="text" class="form-input">
               </label>
-              <label class="form-label"><span class="item-name required">カテゴリー</span>
-                <select name="" class="form-input">
-                  <option value="test1">test1</option>
-                  <option value="test2">test2</option>
-                </select>
+              <label class="form-label">
+                <span class="item-name">パスワード</span>
+                <input type="password" class="form-input">
               </label>
-              <label class="form-label"><span class="item-name required">本文</span>
-                <textarea name="" id="" class="form-input" cols="30" rows="10"></textarea>
-              </label>
-              <label class="form-label"><span class="item-name">ヘッダー画像</span>
-                <div>
-                  <a class="photo" href="#"><img src="images/icon/photo.png" alt="添付"></a>
-                  <div class="comment">トピックに合うイメージ画像を設定して下さい</div>
-                </div>
-              </label>
-              <div class="modal__foot">
-                <div class="action__post">
-                  <button class="button submit">作成する</button>
-                </div>
-              </div>
+              <button class="button login">ログインする</button>
+              <span class="register-message">アカウントをお持ちでない方は<a href="#">会員登録へ</a></span>
             </div><!-- form-group -->
           </div>
         </div>
@@ -503,19 +490,27 @@
 
   <script src="js/masonry.min.js"></script>
   <script>
-      var post = new Vue();
+      var login = new Vue();
 
       new Vue({
-          el: '#trigger-post',
+          el: '#trigger-login',
           methods: {
               execute: function() {
-                  post.$emit('click.trigger');
+                  login.$emit('click.trigger');
+              }
+          }
+      });
+      new Vue({
+          el: '#trigger-head-login',
+          methods: {
+              execute: function() {
+                  login.$emit('click.trigger');
               }
           }
       });
 
       new Vue({
-          el: '#post-modal',
+          el: '#login-modal',
           data: {
               opened: false
           },
@@ -528,35 +523,12 @@
               }
           },
           created: function() {
-              post.$on('click.trigger', this.open);
+              login.$on('click.trigger', this.open);
           }
       });
   </script>
 
-  <script>
-      // テキストエリアの高さ自動調整
-      var modalTextarea = document.getElementById("post-textarea");
-      modalTextarea.style.lineHeight = "20px";//init
-      modalTextarea.style.height = "30px";//init
 
-      modalTextarea.addEventListener("input",function(evt){
-          if(evt.target.scrollHeight > evt.target.offsetHeight){
-              evt.target.style.height = evt.target.scrollHeight + "px";
-          }else{
-              var height,lineHeight;
-              while (true){
-                  height = Number(evt.target.style.height.split("px")[0]);
-                  lineHeight = Number(evt.target.style.lineHeight.split("px")[0]);
-                  evt.target.style.height = height - lineHeight + "px";
-                  if(evt.target.scrollHeight > evt.target.offsetHeight){
-                      evt.target.style.height = evt.target.scrollHeight + "px";
-                      break;
-                  }
-              }
-          }
-      });
-
-  </script>
     <script>
       function mansoryColumn() {
           var elem = document.querySelector('.feed__block');
