@@ -203,8 +203,8 @@ html, body, .trigger {
 
     // e_topic
 
-    // s_login
-    &.modal__login {
+    // s_login & register
+    &.modal__login, &.modal__register {
         width: 400px;
         .title {
             padding: 25px 20px;
@@ -271,7 +271,7 @@ html, body, .trigger {
     }
 
 
-    // e_login
+    // e_login & register
 
     .modal__foot {
         position: relative;
