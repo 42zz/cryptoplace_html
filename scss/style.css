@@ -173,6 +173,8 @@ html, body, .trigger {
         -moz-border-radius: 80px;
         border-radius: 80px;
         background-color: rgba(0, 0, 0, 0.5); }
+  .modal__box.modal__profile .action__post .button {
+    width: 140px !important; }
   .modal__box .modal__foot {
     position: relative;
     width: 100%;
@@ -551,6 +553,9 @@ a {
   text-decoration: none;
   color: #333; }
 
+.nocontent::before, .nocontent::after {
+  content: none !important; }
+
 /**************/
 /*  General   */
 /**************/
@@ -690,6 +695,20 @@ a {
         align-items: center;
         margin-left: 5px;
         color: #ffffff; }
+    .top-bar__right .navigation .login {
+      position: relative; }
+      .top-bar__right .navigation .login .image {
+        width: 28px;
+        height: 28px;
+        -webkit-border-radius: 50%;
+        -moz-border-radius: 50%;
+        border-radius: 50%; }
+      .top-bar__right .navigation .login .text {
+        position: relative;
+        left: 7px;
+        bottom: 7px;
+        font-size: 13px;
+        color: #fff; }
 
 /**************/
 /*  side-bar  */
@@ -737,6 +756,19 @@ a {
           display: inline-block;
           margin-right: 5px;
           color: #d8d8d8; }
+  .side-bar .nologin__buttons {
+    margin: 20px 0; }
+    .side-bar .nologin__buttons .button {
+      width: 162px;
+      height: 34px;
+      -webkit-border-radius: 4px;
+      -moz-border-radius: 4px;
+      border-radius: 4px;
+      border: 1px solid #286bb3;
+      color: #286bb3;
+      font-size: 13px; }
+    .side-bar .nologin__buttons .register {
+      margin-top: 12px; }
   .side-bar .status__box {
     position: relative;
     margin-top: 20px; }

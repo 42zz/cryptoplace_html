@@ -194,6 +194,11 @@ html, body, .trigger {
                 }
             }
         }
+        .action__post {
+            .button {
+                width: 140px !important;
+            }
+        }
     }
 
     // e_topic

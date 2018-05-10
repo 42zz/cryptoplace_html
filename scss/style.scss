@@ -31,6 +31,9 @@ a {
     color: #333;
 }
 
+.nocontent::before, .nocontent::after {
+    content: none !important;
+}
 
 /**************/
 /*  General   */
@@ -194,6 +197,27 @@ a {
                 color: #ffffff;
             }
         }
+
+
+        // ログインしていないとき
+
+        .login {
+            position: relative;
+            .image {
+                width: 28px;
+                height: 28px;
+                -webkit-border-radius: 50%;
+                -moz-border-radius: 50%;
+                border-radius: 50%;
+            }
+            .text {
+                position: relative;
+                left: 7px;
+                bottom: 7px;
+                font-size: 13px;
+                color: #fff;
+            }
+        }
     }
 }
 
@@ -253,6 +277,25 @@ a {
                     color: #d8d8d8;
                 }
             }
+        }
+    }
+
+    // ログインしていないとき
+    .nologin__buttons {
+        margin: 20px 0;
+
+        .button {
+            width: 162px;
+            height: 34px;
+            -webkit-border-radius: 4px;
+            -moz-border-radius: 4px;
+            border-radius: 4px;
+            border: 1px solid #286bb3;
+            color: #286bb3;
+            font-size: 13px;
+        }
+        .register {
+            margin-top: 12px;
         }
     }
 

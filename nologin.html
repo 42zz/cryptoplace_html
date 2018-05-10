@@ -1,0 +1,581 @@
+<!doctype html>
+<html class="no-js" lang="ja" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CryptoPlace</title>
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/style.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/vue.min.js"></script>
+  </head>
+  <body class="main-page">
+
+  <header class="top-bar">
+    <div class="top-bar__left">
+      <div class="sm__menu sm">
+        <a href="#"><img class="icon menu" src="images/sp/icon-menu.svg" alt=""></a>
+      </div>
+      <a href="timeline.html"><h1><img src="images/logo.svg" alt="Crypto Place" class="logo"></h1></a>
+      <div class="top-bar__sm-right sm">
+        <a href="#"><img class="icon notification" src="images/icon/header/icon-notification.svg" alt=""></a>
+        <a href="#"><img class="icon search" src="images/sp/icon-search.svg" alt=""></a>
+      </div><!-- top-bar__sm-right -->
+    </div><!-- top-bar__left -->
+    <div class="bg-header"></div>
+    <div class="top-bar__right pc">
+      <div class="search__box">
+        <input class="search__text" type="text" placeholder="フリーワードで検索する">
+      </div>
+
+      <div class="navigation">
+
+        <a href="#" class="login">
+          <img class="image" src="images/icon/header/icon-guest.png" alt="username">
+          <span class="text">ログインする</span>
+        </a>
+      </div>
+    </div><!-- top-bar__right -->
+
+  </header><!--top-bar-->
+
+
+  <div class="side-bar">
+    <div class="inner">
+
+      <div class="profile">
+        <img class="image" src="images/icon/header/icon-guest.png" alt="username">
+        <div class="info">
+          <span class="name">ゲストさん</span>
+          <span class="coin">コイン</span>
+        </div>
+      </div>
+
+      <div class="nologin__buttons">
+        <button class="button login">ログインする</button>
+        <button class="button register">会員登録する</button>
+      </div>
+
+      <div class="navigation nocontent">
+        <ul>
+          <li class="icon nav home active"><a href="timeline.html">ホーム</a></li>
+          <li class="icon nav topic"><a href="topic.html">トピック</a></li>
+        </ul>
+      </div>
+
+
+
+
+    </div><!-- inner -->
+  </div><!--side-bar-->
+
+
+  <div class="column">
+    <div class="main">
+      <div class="inner">
+
+        <div id="trigger-post" class="status__box" @click="execute">
+          <img class="image" src="https://placehold.jp/150x150.png" alt="user icon">
+          <div class="status__text">気になるニュースは？</div>
+          <div class="status__button"><button class="post">投稿する</button></div>
+        </div>
+
+        <div class="feed__block">
+
+          <div class="feed__element">
+            <div class="feed__header">
+              <div class="inner">
+                <img class="image" src="https://placehold.jp/150x150.png" alt="username">
+                <div class="posted_by">
+                  <span class="name">田中 花子</span>
+                  <span class="id">ID: 00001</span>
+                </div>
+                <div class="data">
+                  <span class="posted_at">2時間前</span>
+                  <span class="status public">●</span>
+                </div>
+              </div>
+            </div><!-- feed__header -->
+            <div class="feed__body">
+              <div class="inner">
+                <p>
+                  １月２月の大暴落を見て、仮想通貨やろうかなあと思い始めていたのに、やらなくてよかったし、これからもやらないと思った人たちが大量に出て新規少なくなったかもだけど、
+                  結局仮想通貨やらなければ乗り遅れると４月以降に再度大量流入来そうな気はする。ま、それまでにコインチェックとか解決必要だけどさ。
+                </p>
+              </div>
+            </div><!-- feed__body -->
+            <div class="feed__react">
+              <div class="inner">
+                <a href="#" class="like">12</a>
+                <a href="#" class="comment">1</a>
+              </div>
+            </div><!-- feed__react -->
+            <div class="feed__comment">
+              <div class="inner">
+                <div class="comment__left">
+                  <img class="image" src="https://placehold.jp/150x150.png" alt="username">
+                </div>
+                <div class="comment__right">
+                  <div class="comment__header">
+                    <div class="commented_by">
+                      <span class="name">田中 花子</span>
+                      <span class="id">ID: 00001</span>
+                      <span class="commented_at">30分前</span>
+                    </div>
+                  </div>
+                  <p class="comment__body">完全同意〜〜</p>
+                </div>
+              </div>
+            </div><!-- feed__comment -->
+            <div class="feed__comment-form">
+              <div class="inner">
+                <img class="image" src="https://placehold.jp/150x150.png" alt="username">
+                <div class="comment__box">
+                  <span class="comment__text">コメントする</span>
+                  <button class="comment__button">投稿</button>
+                </div>
+              </div>
+            </div><!-- feed__comment-form -->
+          </div><!-- feed__element -->
+
+          <div class="feed__element">
+            <div class="feed__header">
+              <div class="inner">
+                <img class="image" src="https://placehold.jp/150x150.png" alt="username">
+                <div class="posted_by">
+                  <span class="name">田中 花子</span>
+                  <span class="id">ID: 00001</span>
+                </div>
+                <div class="data">
+                  <span class="posted_at">2時間前</span>
+                  <span class="status private">●</span>
+                </div>
+              </div>
+            </div><!-- feed__header -->
+            <div class="feed__body">
+              <div class="inner">
+                <p>
+                  中国、仮想通貨取引所の設立を国家レベルで設立すべきと提案。<br><br>
+
+                  これは良いニュースな気がします！<br>
+                  そろそろ仮想通貨の価格戻ってきそうですね。<br>
+                  リップル買い戻さなきゃ！！<br><br>
+
+                  http://news.8btc.com/blockchain-under-spotlight-on-chinas-two-sessions-2018 …
+                </p>
+              </div>
+            </div><!-- feed__body -->
+            <div class="feed__react">
+              <div class="inner">
+                <a href="#" class="like">12</a>
+                <a href="#" class="comment">1</a>
+              </div>
+            </div><!-- feed__react -->
+
+            <div class="feed__comment-form">
+              <div class="inner">
+                <img class="image" src="https://placehold.jp/150x150.png" alt="username">
+                <div class="comment__box">
+                  <span class="comment__text">コメントする</span>
+                  <button class="comment__button">投稿</button>
+                </div>
+              </div>
+            </div><!-- feed__comment-form -->
+          </div><!-- feed__element -->
+
+
+          <div class="feed__element">
+            <div class="feed__header">
+              <div class="inner">
+                <img class="image" src="https://placehold.jp/150x150.png" alt="username">
+                <div class="posted_by">
+                  <span class="name">田中 花子</span>
+                  <span class="id">ID: 00001</span>
+                </div>
+                <div class="data">
+                  <span class="posted_at">2時間前</span>
+                  <span class="status public">●</span>
+                </div>
+              </div>
+            </div><!-- feed__header -->
+            <div class="feed__body">
+              <div class="inner">
+                <p>
+                  １月２月の大暴落を見て、仮想通貨やろうかなあと思い始めていたのに、やらなくてよかったし、これからもやらないと思った人たちが大量に出て新規少なくなったかもだけど、
+                  結局仮想通貨やらなければ乗り遅れると４月以降に再度大量流入来そうな気はする。ま、それまでにコインチェックとか解決必要だけどさ。
+                </p>
+              </div>
+            </div><!-- feed__body -->
+            <div class="feed__react">
+              <div class="inner">
+                <a href="#" class="like">12</a>
+                <a href="#" class="comment">1</a>
+              </div>
+            </div><!-- feed__react -->
+            <div class="feed__comment">
+              <div class="inner">
+                <div class="comment__left">
+                  <img class="image" src="https://placehold.jp/150x150.png" alt="username">
+                </div>
+                <div class="comment__right">
+                  <div class="comment__header">
+                    <div class="commented_by">
+                      <span class="name">田中 花子</span>
+                      <span class="id">ID: 00001</span>
+                      <span class="commented_at">30分前</span>
+                    </div>
+                  </div>
+                  <p class="comment__body">完全同意〜〜</p>
+                </div>
+              </div>
+            </div><!-- feed__comment -->
+            <div class="feed__comment-form">
+              <div class="inner">
+                <img class="image" src="https://placehold.jp/150x150.png" alt="username">
+                <div class="comment__box">
+                  <span class="comment__text">コメントする</span>
+                  <button class="comment__button">投稿</button>
+                </div>
+              </div>
+            </div><!-- feed__comment-form -->
+          </div><!-- feed__element -->
+          <div class="feed__element">
+            <div class="feed__header">
+              <div class="inner">
+                <img class="image" src="https://placehold.jp/150x150.png" alt="username">
+                <div class="posted_by">
+                  <span class="name">田中 花子</span>
+                  <span class="id">ID: 00001</span>
+                </div>
+                <div class="data">
+                  <span class="posted_at">2時間前</span>
+                  <span class="status public">●</span>
+                </div>
+              </div>
+            </div><!-- feed__header -->
+            <div class="feed__body">
+              <div class="inner">
+                <p>
+                  １月２月の大暴落を見て、仮想通貨やろうかなあと思い始めていたのに、やらなくてよかったし、これからもやらないと思った人たちが大量に出て新規少なくなったかもだけど、
+                  結局仮想通貨やらなければ乗り遅れると４月以降に再度大量流入来そうな気はする。ま、それまでにコインチェックとか解決必要だけどさ。
+                </p>
+              </div>
+            </div><!-- feed__body -->
+            <div class="feed__react">
+              <div class="inner">
+                <a href="#" class="like">12</a>
+                <a href="#" class="comment">1</a>
+              </div>
+            </div><!-- feed__react -->
+            <div class="feed__comment">
+              <div class="inner">
+                <div class="comment__left">
+                  <img class="image" src="https://placehold.jp/150x150.png" alt="username">
+                </div>
+                <div class="comment__right">
+                  <div class="comment__header">
+                    <div class="commented_by">
+                      <span class="name">田中 花子</span>
+                      <span class="id">ID: 00001</span>
+                      <span class="commented_at">30分前</span>
+                    </div>
+                  </div>
+                  <p class="comment__body">完全同意〜〜</p>
+                </div>
+              </div>
+            </div><!-- feed__comment -->
+            <div class="feed__comment-form">
+              <div class="inner">
+                <img class="image" src="https://placehold.jp/150x150.png" alt="username">
+                <div class="comment__box">
+                  <span class="comment__text">コメントする</span>
+                  <button class="comment__button">投稿</button>
+                </div>
+              </div>
+            </div><!-- feed__comment-form -->
+          </div><!-- feed__element -->
+
+        </div><!-- feed__block -->
+      </div>
+    </div><!-- main -->
+
+    <div class="right__column pc">
+      <div class="advertisement"></div>
+
+      <div class="popular__contents">
+        <div class="topic">
+          <div class="box">
+            <div class="inner">
+              <h2 class="title">人気トピック</h2>
+              <div class="popular-items">
+                <div class="item">
+                  <img src="https://placehold.jp/150x150.png" alt="イーサリアムの決済について" class="item-image">
+                  <div class="item-text">
+                    <h3 class="item-title">イーサリアムの決済について</h3>
+                    <div class="item-data">
+                      <span class="item-updated">2018年3月5日 更新</span>
+                      <div class="item-reaction">
+                        <span class="like">12</span>
+                        <span class="comment">1</span>
+                      </div>
+                    </div>
+                  </div><!-- item-text -->
+                </div><!-- item -->
+
+                <div class="item">
+                  <img src="https://placehold.jp/150x150.png" alt="イーサリアムの決済について" class="item-image">
+                  <div class="item-text">
+                    <h3 class="item-title">イーサリアムの決済について</h3>
+                    <div class="item-data">
+                      <span class="item-updated">2018年3月5日 更新</span>
+                      <div class="item-reaction">
+                        <span class="like">12</span>
+                        <span class="comment">1</span>
+                      </div>
+                    </div>
+                  </div><!-- item-text -->
+                </div><!-- item -->
+
+
+                <div class="item">
+                  <img src="https://placehold.jp/150x150.png" alt="イーサリアムの決済について" class="item-image">
+                  <div class="item-text">
+                    <h3 class="item-title">イーサリアムの決済について</h3>
+                    <div class="item-data">
+                      <span class="item-updated">2018年3月5日 更新</span>
+                      <div class="item-reaction">
+                        <span class="like">12</span>
+                        <span class="comment">1</span>
+                      </div>
+                    </div>
+                  </div><!-- item-text -->
+                </div><!-- item -->
+
+                <div class="item">
+                  <img src="https://placehold.jp/150x150.png" alt="イーサリアムの決済について" class="item-image">
+                  <div class="item-text">
+                    <h3 class="item-title">イーサリアムの決済について</h3>
+                    <div class="item-data">
+                      <span class="item-updated">2018年3月5日 更新</span>
+                      <div class="item-reaction">
+                        <span class="like">12</span>
+                        <span class="comment">1</span>
+                      </div>
+                    </div>
+                  </div><!-- item-text -->
+                </div><!-- item -->
+              </div><!-- popular-items -->
+            </div>
+          </div><!-- box -->
+          <a href="#" class="more-item">もっと見る</a>
+        </div><!-- topic -->
+
+
+        <div class="post">
+          <div class="box">
+            <div class="inner">
+              <h2 class="title">人気投稿</h2>
+              <div class="popular-items">
+
+                <div class="item">
+                  <img src="https://placehold.jp/150x150.png" alt="きむら" class="item-image">
+                  <div class="item-content">
+                    <div class="item-head">
+                      <span class="name">きむら</span>
+                      <span class="id">ID: 00004</span>
+                      <span class="updated">2分前</span>
+                    </div>
+                    <div class="item-body">
+                      <p>
+                        QASHがこれから仮想通貨のインフラになると期待して買う。その期待感があるうちに買うから..
+                        <a href="#" class="read-more">続きを読む</a>
+                      </p>
+                    </div>
+                    <div class="item-foot">
+                      <div class="item-reaction">
+                        <span class="like">300</span>
+                        <span class="comment">1</span>
+                      </div>
+                    </div>
+                  </div><!-- item-content -->
+                </div><!-- item -->
+
+
+                <div class="item">
+                  <img src="https://placehold.jp/150x150.png" alt="きむら" class="item-image">
+                  <div class="item-content">
+                    <div class="item-head">
+                      <span class="name">きむら</span>
+                      <span class="id">ID: 00004</span>
+                      <span class="updated">2分前</span>
+                    </div>
+                    <div class="item-body">
+                      <p>
+                        QASHがこれから仮想通貨のインフラになると期待して買う。その期待感があるうちに買うから..
+                        <a href="#" class="read-more">続きを読む</a>
+                      </p>
+                    </div>
+                    <div class="item-foot">
+                      <div class="item-reaction">
+                        <span class="like">300</span>
+                        <span class="comment">1</span>
+                      </div>
+                    </div>
+                  </div><!-- item-content -->
+                </div><!-- item -->
+
+
+                <div class="item">
+                  <img src="https://placehold.jp/150x150.png" alt="きむら" class="item-image">
+                  <div class="item-content">
+                    <div class="item-head">
+                      <span class="name">きむら</span>
+                      <span class="id">ID: 00004</span>
+                      <span class="updated">2分前</span>
+                    </div>
+                    <div class="item-body">
+                      <p>
+                        QASHがこれから仮想通貨のインフラになると期待して買う。その期待感があるうちに買うから..
+                        <a href="#" class="read-more">続きを読む</a>
+                      </p>
+                    </div>
+                    <div class="item-foot">
+                      <div class="item-reaction">
+                        <span class="like">300</span>
+                        <span class="comment">1</span>
+                      </div>
+                    </div>
+                  </div><!-- item-content -->
+                </div><!-- item -->
+
+
+
+              </div><!-- popular-items -->
+            </div>
+          </div><!-- box -->
+          <a href="#" class="more-item">もっと見る</a>
+        </div><!-- post -->
+      </div><!-- popular__contents -->
+
+    </div><!-- side__content -->
+  </div><!-- column -->
+
+
+  <div id="post-modal">
+    <transition name="modal">
+      <div class="modal" v-show="opened" @click.self="close">
+        <div class="modal__content">
+          <div class="modal__box modal__topic">
+            <div class="modal__close" @click="close">×</div>
+            <h2 class="title">トピックをつくって、共通の話題で盛り上がろう！</h2>
+            <div class="form-group">
+              <label class="form-label"><span class="item-name required">タイトル</span>
+                <input class="form-input" type="text" placeholder="100文字以内で入力して下さい">
+              </label>
+              <label class="form-label"><span class="item-name required">カテゴリー</span>
+                <select name="" class="form-input">
+                  <option value="test1">test1</option>
+                  <option value="test2">test2</option>
+                </select>
+              </label>
+              <label class="form-label"><span class="item-name required">本文</span>
+                <textarea name="" id="" class="form-input" cols="30" rows="10"></textarea>
+              </label>
+              <label class="form-label"><span class="item-name">ヘッダー画像</span>
+                <div>
+                  <a class="photo" href="#"><img src="images/icon/photo.png" alt="添付"></a>
+                  <div class="comment">トピックに合うイメージ画像を設定して下さい</div>
+                </div>
+              </label>
+              <div class="modal__foot">
+                <div class="action__post">
+                  <button class="button submit">作成する</button>
+                </div>
+              </div>
+            </div><!-- form-group -->
+          </div>
+        </div>
+      </div>
+    </transition>
+  </div>
+
+  <script src="js/masonry.min.js"></script>
+  <script>
+      var post = new Vue();
+
+      new Vue({
+          el: '#trigger-post',
+          methods: {
+              execute: function() {
+                  post.$emit('click.trigger');
+              }
+          }
+      });
+
+      new Vue({
+          el: '#post-modal',
+          data: {
+              opened: false
+          },
+          methods: {
+              open: function() {
+                  this.opened = true;
+              },
+              close: function() {
+                  this.opened = false;
+              }
+          },
+          created: function() {
+              post.$on('click.trigger', this.open);
+          }
+      });
+  </script>
+
+  <script>
+      // テキストエリアの高さ自動調整
+      var modalTextarea = document.getElementById("post-textarea");
+      modalTextarea.style.lineHeight = "20px";//init
+      modalTextarea.style.height = "30px";//init
+
+      modalTextarea.addEventListener("input",function(evt){
+          if(evt.target.scrollHeight > evt.target.offsetHeight){
+              evt.target.style.height = evt.target.scrollHeight + "px";
+          }else{
+              var height,lineHeight;
+              while (true){
+                  height = Number(evt.target.style.height.split("px")[0]);
+                  lineHeight = Number(evt.target.style.lineHeight.split("px")[0]);
+                  evt.target.style.height = height - lineHeight + "px";
+                  if(evt.target.scrollHeight > evt.target.offsetHeight){
+                      evt.target.style.height = evt.target.scrollHeight + "px";
+                      break;
+                  }
+              }
+          }
+      });
+
+  </script>
+    <script>
+      function mansoryColumn() {
+          var elem = document.querySelector('.feed__block');
+          var msnry = new Masonry( elem, {
+              // options
+              itemSelector: '.feed__element',
+              columnWidth: 400
+          });
+
+          // element argument can be a selector string
+          //   for an individual element
+          var msnry = new Masonry( '.feed__block', {
+              // options
+          });
+      }
+
+      if(window.innerWidth > 980) {
+          mansoryColumn();
+      }
+    </script>
+</body>
+</html>
