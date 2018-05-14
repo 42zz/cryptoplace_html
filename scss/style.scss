@@ -805,6 +805,37 @@ a {
             font-size: 14px;
             line-height: 1.5;
             color: #333;
+            .inner {
+                display: block;
+            }
+
+
+            .thumbnail {
+                a {
+                    color: #4a90e2;
+                }
+                .image {
+                    margin-top: 20px;
+                    width: 100%;
+                }
+
+                .block {
+                    margin-top: 12px;
+                    padding: 6px 10px;
+                    border-left: 3px solid #d7d5d5;
+                    color: #333;
+                    font-size: 14px;
+                    line-height: 1.5;
+
+
+                    .title {
+                        font-weight: 600;
+                    }
+                    .content {
+                        margin-top: 6px;
+                    }
+                }
+            }
         }
 
         .feed__react {

@@ -1177,6 +1177,24 @@ a {
     font-size: 14px;
     line-height: 1.5;
     color: #333; }
+    .main-page .feed__element .feed__body .inner {
+      display: block; }
+    .main-page .feed__element .feed__body .thumbnail a {
+      color: #4a90e2; }
+    .main-page .feed__element .feed__body .thumbnail .image {
+      margin-top: 20px;
+      width: 100%; }
+    .main-page .feed__element .feed__body .thumbnail .block {
+      margin-top: 12px;
+      padding: 6px 10px;
+      border-left: 3px solid #d7d5d5;
+      color: #333;
+      font-size: 14px;
+      line-height: 1.5; }
+      .main-page .feed__element .feed__body .thumbnail .block .title {
+        font-weight: 600; }
+      .main-page .feed__element .feed__body .thumbnail .block .content {
+        margin-top: 6px; }
   .main-page .feed__element .feed__react {
     display: flex;
     display: -webkit-flex;
