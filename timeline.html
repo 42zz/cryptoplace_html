@@ -444,6 +444,14 @@
               }
           }
       });
+      new Vue({
+          el: '#trigger-post_sidebar',
+          methods: {
+              execute: function() {
+                  post.$emit('click.trigger');
+              }
+          }
+      });
 
       new Vue({
           el: '#post-modal',
