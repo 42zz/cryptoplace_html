@@ -1821,6 +1821,7 @@ a {
     .profile__head .profile__right .action__buttons .action__follow, .profile__head .profile__right .action__buttons .action__friend {
       width: 130px;
       height: 32px;
+      background: #fff;
       border: 1px solid #286bb3;
       -webkit-border-radius: 4px;
       -moz-border-radius: 4px;
@@ -2567,7 +2568,8 @@ a {
 
   .profile__head {
     padding-top: 16px;
-    top: 60px; }
+    top: 60px;
+    height: auto; }
     .profile__head::after {
       top: 130px; }
     .profile__head .image {
@@ -2579,6 +2581,42 @@ a {
       margin-left: 15px; }
       .profile__head .profile__right .coin-bar {
         width: 95%; }
+    .profile__head .user_profile {
+      position: relative;
+      top: 35px;
+      left: 15px;
+      padding-bottom: 60px; }
+      .profile__head .user_profile .title {
+        font-weight: 600;
+        font-size: 13px;
+        color: #333; }
+      .profile__head .user_profile .edit {
+        position: absolute;
+        top: 0;
+        right: 30px;
+        font-size: 14px;
+        color: #4a90e2; }
+      .profile__head .user_profile .data {
+        font-size: 13px; }
+        .profile__head .user_profile .data dt {
+          color: #808080; }
+        .profile__head .user_profile .data dd {
+          color: #333; }
+    .profile__head::after {
+      top: 160px; }
+    .profile__head .action__buttons.sm {
+      display: flex !important; }
+      .profile__head .action__buttons.sm .action__follow, .profile__head .action__buttons.sm .action__friend {
+        width: 50%;
+        height: 32px;
+        background: #fff;
+        border: 1px solid #286bb3;
+        -webkit-border-radius: 4px;
+        -moz-border-radius: 4px;
+        border-radius: 4px;
+        margin: 15px 8px;
+        font-size: 14px;
+        color: #286bb3; }
 
   .user_data.sm {
     background: #fff;
