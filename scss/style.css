@@ -1267,16 +1267,20 @@ a {
       border-radius: 50%;
       margin-right: 15px; }
     .main-page .feed__element .feed__comment-form .comment__box {
-      display: flex;
-      display: -webkit-flex;
-      width: 232px;
-      padding: 10px;
+      position: relative;
+      width: 252px;
       border-radius: 2px;
       background-color: #fff;
-      border: solid 1px #ccc;
       font-size: 13px;
       color: #808080; }
+      .main-page .feed__element .feed__comment-form .comment__box .comment__text {
+        padding: 10px;
+        border: solid 1px #ccc;
+        width: 100%; }
       .main-page .feed__element .feed__comment-form .comment__box .comment__button {
+        position: absolute;
+        top: 10px;
+        right: 10px;
         margin-left: auto;
         font-size: 13px;
         color: #4a90e2; }
