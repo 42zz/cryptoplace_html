@@ -14,7 +14,7 @@
 
   <script>header('');</script>
 
-    <div class="profile__head">
+    <div class="profile__head friend">
       <div class="inner">
         <img class="image" src="https://randomuser.me/api/portraits/men/91.jpg" alt="username">
         <div class="profile__right friend">
@@ -43,17 +43,56 @@
       </div>
       <div class="user_profile sm">
         <h2 class="title">プロフィール</h2>
-        <a id="trigger-editProfile" @click="execute" class="edit">編集する</a>
         <dl class="data">
           <dt>年齢：</dt><dd>20代後半</dd>
           <dt>仮想通貨歴：</dt><dd>2年</dd>
           <dt>持っている銘柄：</dt><dd>ビットコイン（BTC)、イーサリアム（ETH)</dd>
           <dt>今、注目している銘柄</dt><dd>ネム（XEM)、ステラー（XLM)</dd>
+          <dt>自己紹介：</dt><dd class="user_introduction">
+          はじめまして！
+          田中 花子と申します。
+          仮想通貨の最新情報をキャッチして、所感と共に紹介していきます♪
+          ステラーについてお詳しい方、お友達になってくれると嬉しいです！
+          よろしくお願いします^^
+        </dd>
         </dl>
       </div>
     </div><!-- profile__head -->
 
-    <div class="profile__wrapper">
+  <div class="topic__participation sm">
+    <div class="title">参加トピック</div>
+    <div class="topic__block">
+      <div class="topic__scroll">
+        <a href="#" class="topic__element">
+          <div class="mask"></div><img src="http://landofaloha.net/img/header/index01.jpg" alt="topic image" class="image">
+          <p class="text">イーサリアムの決済について</p>
+        </a>
+        <a href="#" class="topic__element">
+          <div class="mask"></div><img src="http://landofaloha.net/img/header/index01.jpg" alt="topic image" class="image">
+          <p class="text">イーサリアムの決済について</p>
+        </a>
+        <a href="#" class="topic__element">
+          <div class="mask"></div><img src="http://landofaloha.net/img/header/index01.jpg" alt="topic image" class="image">
+          <p class="text">イーサリアムの決済について</p>
+        </a>
+        <a href="#" class="topic__element">
+          <div class="mask"></div><img src="http://landofaloha.net/img/header/index01.jpg" alt="topic image" class="image">
+          <p class="text">イーサリアムの決済について</p>
+        </a>
+        <a href="#" class="topic__element">
+          <div class="mask"></div><img src="http://landofaloha.net/img/header/index01.jpg" alt="topic image" class="image">
+          <p class="text">イーサリアムの決済について</p>
+        </a>
+        <a href="#" class="topic__element">
+          <div class="mask"></div><img src="http://landofaloha.net/img/header/index01.jpg" alt="topic image" class="image">
+          <p class="text">イーサリアムの決済について</p>
+        </a>
+      </div>
+    </div>
+  </div><!-- topic__participation -->
+
+
+  <div class="profile__wrapper">
       <div class="inner">
         <div class="profile__side pc">
           <div class="box">
