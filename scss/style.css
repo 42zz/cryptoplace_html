@@ -23,7 +23,7 @@ html, body, .trigger {
   left: 0;
   width: 100%;
   height: 100%;
-  z-index: 99;
+  z-index: 999;
   background: rgba(0, 0, 0, 0.15);
   transform: translate3d(0, 0, 0); }
 
@@ -300,7 +300,6 @@ html, body, .trigger {
       left: 20px;
       width: 26px; }
     .modal .modal__content .modal__textarea {
-      height: 81% !important;
       max-height: 81%;
       position: absolute;
       top: 65px;
@@ -367,7 +366,35 @@ html, body, .trigger {
         .modal .modal__content .modal__box.modal__profile .profile__body .form-split {
           width: 100%; }
           .modal .modal__content .modal__box.modal__profile .profile__body .form-split .item-name {
-            width: 100%; } }
+            width: 100%; }
+
+  .side-menu {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 10%;
+    height: 100%;
+    z-index: 90;
+    background: rgba(0, 0, 0, 0.15);
+    transform: translate3d(0, 0, 0); }
+
+  .toggle_menu-enter-active {
+    transition: opacity .2s; }
+
+  .toggle_menu-enter {
+    opacity: 0; }
+
+  .toggle_menu-enter-to {
+    opacity: 1; }
+
+  .toggle_menu-leave-active {
+    transition: opacity .6s; }
+
+  .toggle_menu-leave {
+    opacity: 1; }
+
+  .toggle_menu-leave-to {
+    opacity: 0; } }
 .top-page {
   background: #fff; }
   .top-page .inner {
@@ -750,7 +777,7 @@ button {
   padding-top: 10px;
   background-image: linear-gradient(to top, #397ac0, #1458a2);
   box-shadow: 0 1px 0 0 #134573;
-  z-index: 99; }
+  z-index: 81; }
   .top-bar .bg-header {
     background: url("../images/bg-header.png");
     -webkit-background-size: contain;
@@ -766,6 +793,7 @@ button {
 .top-bar__left {
   margin-right: 40px; }
   .top-bar__left .logo {
+    display: block;
     position: relative;
     margin-left: 30px;
     max-width: 206px; }
@@ -1026,6 +1054,9 @@ button {
       font-weight: 400; }
       .side-bar .participation .list .link {
         margin-top: 20px; }
+
+.side-menu {
+  display: none; }
 
 /**************/
 /*  main      */
@@ -2547,6 +2578,8 @@ button {
       left: 30px; }
     .top-bar__left .sm__menu {
       position: absolute;
+      cursor: pointer;
+      z-index: 30;
       top: 20px;
       left: 18px;
       display: block; }
@@ -2561,6 +2594,9 @@ button {
 
   .side-bar {
     display: none; }
+
+  .side-menu {
+    display: block; }
 
   .column {
     min-width: auto;
@@ -2609,6 +2645,7 @@ button {
     position: fixed;
     bottom: 15px;
     right: 15px;
+    z-index: 90;
     width: 56px;
     height: 56px;
     -webkit-border-radius: 30px;
@@ -2637,7 +2674,7 @@ button {
   .topic__detail .main__header {
     margin-bottom: 0;
     position: absolute;
-    z-index: 90;
+    z-index: 80;
     width: 100%;
     height: 40px;
     background-color: rgba(0, 0, 0, 0.33); }
@@ -2826,7 +2863,7 @@ button {
 
   .fw__header {
     height: 104px;
-    z-index: 90; }
+    z-index: 80; }
     .fw__header .inner {
       width: 100%;
       top: 15px;

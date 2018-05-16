@@ -492,6 +492,37 @@
               post.$on('click.trigger', this.open);
           }
       });
+
+
+
+      var toggle_menu = new Vue();
+
+      new Vue({
+          el: '#trigger-menu',
+          methods: {
+              execute: function() {
+                  toggle_menu.$emit('click.trigger');
+              }
+          }
+      });
+
+      new Vue({
+          el: '#toggle_menu',
+          data: {
+              opened: false
+          },
+          methods: {
+              open: function() {
+                  this.opened = true;
+              },
+              close: function() {
+                  this.opened = false;
+              }
+          },
+          created: function() {
+              toggle_menu.$on('click.trigger', this.open);
+          }
+      });
   </script>
 
   <script>
