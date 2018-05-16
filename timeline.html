@@ -415,11 +415,17 @@
   </div><!-- column -->
 
 
+  <div id="sticky-post" @click="execute" class="sticky-post sm">
+    <img src="images/sp/icon-edit.png" alt="投稿する" class="edit-icon">
+  </div>
+
+
   <div id="post-modal">
     <transition name="modal">
       <div class="modal" v-show="opened" @click.self="close">
         <div class="modal__content">
           <div class="modal__box">
+            <h2 class="title sm">投稿する</h2>
             <div class="modal__close" @click="close">×</div>
               <img class="image" src="https://placehold.jp/150x150.png" alt="username">
               <textarea name="post" id="post-textarea" class="modal__textarea" placeholder="気になるニュースは？"></textarea>
@@ -454,6 +460,14 @@
       });
       new Vue({
           el: '#trigger-post_sidebar',
+          methods: {
+              execute: function() {
+                  post.$emit('click.trigger');
+              }
+          }
+      });
+      new Vue({
+          el: '#sticky-post',
           methods: {
               execute: function() {
                   post.$emit('click.trigger');

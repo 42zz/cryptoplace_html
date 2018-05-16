@@ -71,7 +71,7 @@ html, body, .trigger {
   .modal__content .modal__textarea {
     width: 100%;
     height: 200px;
-    padding: 50px 100px 60px 113px;
+    padding: 50px 80px 60px 113px;
     resize: none; }
 
 .modal__content > * {
@@ -278,6 +278,63 @@ html, body, .trigger {
           border: 1px solid #808080;
           margin-right: 10px; }
 
+/***************/
+/*  Responsive */
+/*  for Mobile */
+/*  min < 979  */
+/***************/
+@media screen and (max-width: 979px) {
+  .modal .modal__content {
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    -webkit-transform: none;
+    -moz-transform: none;
+    -ms-transform: none;
+    -o-transform: none;
+    transform: none; }
+    .modal .modal__content .modal__close {
+      z-index: 99;
+      top: 12px;
+      left: 20px;
+      width: 26px; }
+    .modal .modal__content .modal__textarea {
+      height: 81% !important;
+      max-height: 81%;
+      position: absolute;
+      top: 65px;
+      left: 0;
+      padding: 50px 0 60px 113px; }
+    .modal .modal__content .modal__box {
+      width: 100%;
+      height: 100%; }
+      .modal .modal__content .modal__box .title {
+        position: relative;
+        font-size: 18px;
+        color: #333;
+        padding: 20px 0 20px 55px;
+        border-bottom: 1px solid #ccc;
+        position: relative;
+        z-index: 20; }
+      .modal .modal__content .modal__box .image {
+        position: relative;
+        z-index: 20; }
+      .modal .modal__content .modal__box .modal__foot {
+        position: absolute;
+        bottom: 0; }
+      .modal .modal__content .modal__box.modal__topic .form-group {
+        overflow-y: scroll;
+        height: 80%; }
+        .modal .modal__content .modal__box.modal__topic .form-group textarea {
+          height: 30%; }
+      .modal .modal__content .modal__box.modal__topic .form-label {
+        display: block;
+        width: 95%;
+        margin: auto;
+        padding: 10px 0; }
+        .modal .modal__content .modal__box.modal__topic .form-label .form-input {
+          margin-top: 10px; } }
 .top-page {
   background: #fff; }
   .top-page .inner {
@@ -602,6 +659,9 @@ html, body {
 a {
   text-decoration: none;
   color: #333; }
+
+button {
+  background: #fff; }
 
 .nocontent::before, .nocontent::after {
   content: none !important; }
@@ -953,8 +1013,7 @@ a {
   font-weight: 300;
   font-size: 14px;
   color: #808080; }
-  .main .main-
-  > .inner {
+  .main > .inner {
     position: relative;
     margin-left: 50px;
     margin-bottom: 50px; }
@@ -2512,6 +2571,22 @@ a {
           margin-bottom: 13px; }
           .column .main .feed__block .feed__element .feed__comment-form .comment__box {
             width: 100%; }
+
+  .sticky-post {
+    position: fixed;
+    bottom: 15px;
+    right: 15px;
+    width: 56px;
+    height: 56px;
+    -webkit-border-radius: 30px;
+    -moz-border-radius: 30px;
+    border-radius: 30px;
+    background: #286bb3;
+    box-shadow: 0 2px 6px 0 rgba(0, 0, 0, 0.4); }
+    .sticky-post .edit-icon {
+      position: relative;
+      top: 14px;
+      left: 14px; }
 
   .topic__block {
     width: 100%;

@@ -53,7 +53,7 @@ html, body, .trigger {
     .modal__textarea{
         width: 100%;
         height: 200px;
-        padding: 50px 100px 60px 113px;
+        padding: 50px 80px 60px 113px;
         resize: none;
     }
 }
@@ -338,5 +338,88 @@ html, body, .trigger {
             }
 
         }
+    }
+}
+
+/***************/
+/*  Responsive */
+/*  for Mobile */
+/*  min < 979  */
+/***************/
+@media screen and (max-width: 979px) {
+    .modal {
+       .modal__content {
+           //top: 333px;
+           //left: 187px;
+           top: 0;
+           left: 0;
+           width: 100%;
+           height: 100%;
+           -webkit-transform: none;
+           -moz-transform: none;
+           -ms-transform: none;
+           -o-transform: none;
+           transform: none;
+
+           .modal__close {
+               z-index: 99;
+               top: 12px;
+               left: 20px;
+               width: 26px;
+           }
+
+           .modal__textarea {
+               height: 81% !important;
+               max-height: 81%;
+               position: absolute;
+               top: 65px;
+               left: 0;
+               padding: 50px 0 60px 113px;
+           }
+
+           .modal__box {
+               width: 100%;
+               height: 100%;
+               
+               .title {
+                   position: relative;
+                   font-size: 18px;
+                   color: #333;
+                   padding: 20px 0 20px 55px;
+                   border-bottom: 1px solid #ccc;
+                   position: relative;
+                   z-index: 20;
+               }
+               .image {
+                   position: relative;
+                   z-index: 20;
+               }
+
+               .modal__foot {
+                   position: absolute;
+                   bottom: 0;
+               }
+
+
+               &.modal__topic {
+                   .form-group {
+                       overflow-y: scroll;
+                       height: 80%;
+                       textarea {
+                           height: 30%;
+                       }
+                   }
+                   .form-label {
+                       display: block;
+                       width: 95%;
+                       margin: auto;
+                       padding: 10px 0;
+                       .form-input {
+                           margin-top: 10px;
+                       }
+                   }
+               }
+           }
+       }
     }
 }

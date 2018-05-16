@@ -30,6 +30,9 @@ a {
     text-decoration: none;
     color: #333;
 }
+button {
+    background: #fff;
+}
 
 .nocontent::before, .nocontent::after {
     content: none !important;
@@ -2689,6 +2692,27 @@ a {
             }
         }
     }
+
+    .sticky-post {
+        position: fixed;
+        bottom: 15px;
+        right: 15px;
+        width: 56px;
+        height: 56px;
+        -webkit-border-radius: 30px;
+        -moz-border-radius: 30px;
+        border-radius: 30px;
+        background: #286bb3;
+        box-shadow: 0 2px 6px 0 rgba(0, 0, 0, 0.4);
+
+        .edit-icon {
+            position: relative;
+            top: 14px;
+            left: 14px;
+        }
+    }
+
+
     //topic
     .topic__block {
         width: 100%;
