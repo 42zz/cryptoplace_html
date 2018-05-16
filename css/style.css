@@ -953,7 +953,8 @@ a {
   font-weight: 300;
   font-size: 14px;
   color: #808080; }
-  .main > .inner {
+  .main .main-
+  > .inner {
     position: relative;
     margin-left: 50px;
     margin-bottom: 50px; }
