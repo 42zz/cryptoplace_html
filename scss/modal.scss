@@ -499,6 +499,21 @@ html, body, .trigger {
             height: 100%;
             background: #fff;
 
+            .inner {
+                padding: 15px;
+            }
+
+            .menu__head {
+                display: block;
+                background: #eee;
+                border-bottom: 1px solid #ccc;
+
+                .title {
+                    width: 100%;
+                    padding: 15px;
+                }
+            }
+
             .modal__close {
                 top: 10px;
             }
@@ -665,12 +680,28 @@ html, body, .trigger {
 
     }
 
-    .toggle_menu-enter-active {transition: left .2s;}
-    .toggle_menu-enter        {left: -50px;}
-    .toggle_menu-enter-to     {left: 0;}
-    .toggle_menu-leave-active {transition: left .6s;}
-    .toggle_menu-leave        {left: 0;}
-    .toggle_menu-leave-to     {left: -50px;}
+    .toggle_menu-enter-active {
+        transition: all .2s;
+    }
+    .toggle_menu-enter {
+        opacity: 0;
+        left: -150px;
+    }
+    .toggle_menu-enter-to {
+        opacity: 1;
+        left: 0;
+    }
+    .toggle_menu-leave-active {
+        transition: all .6s;
+    }
+    .toggle_menu-leave {
+        opacity: 1;
+        left: 0;
+    }
+    .toggle_menu-leave-to {
+        opacity: 0;
+        left: -400px;
+    }
 
 
 
