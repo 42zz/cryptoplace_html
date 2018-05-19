@@ -296,6 +296,7 @@ html, body, .trigger {
     transform: none; }
     .modal .modal__content .modal__close {
       z-index: 99;
+      color: #ccc;
       top: 12px;
       left: 20px;
       width: 26px; }
@@ -386,12 +387,12 @@ html, body, .trigger {
         padding: 15px; }
       .side-menu .menu__content .menu__head {
         display: block;
-        background: #eee;
         border-bottom: 1px solid #ccc; }
         .side-menu .menu__content .menu__head .title {
           width: 100%;
           padding: 15px; }
       .side-menu .menu__content .modal__close {
+        color: #ccc;
         top: 10px; }
       .side-menu .menu__content .profile {
         display: flex;

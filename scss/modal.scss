@@ -364,6 +364,7 @@ html, body, .trigger {
 
            .modal__close {
                z-index: 99;
+               color: #ccc;
                top: 12px;
                left: 20px;
                width: 26px;
@@ -505,7 +506,6 @@ html, body, .trigger {
 
             .menu__head {
                 display: block;
-                background: #eee;
                 border-bottom: 1px solid #ccc;
 
                 .title {
@@ -515,6 +515,7 @@ html, body, .trigger {
             }
 
             .modal__close {
+                color: #ccc;
                 top: 10px;
             }
 
